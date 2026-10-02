@@ -1,0 +1,41 @@
+{
+  "level": {
+    "current": "tool",
+    "target": "tool",
+    "gap_reason": ""
+  },
+  "nodes": [
+    {"name": "选品", "ai_duty": "用AI跑一下市场数据", "human_duty": "无"},
+    {"name": "内容", "ai_duty": "AI写listing", "human_duty": "待定"},
+    {"name": "投放", "ai_duty": "AI调广告", "human_duty": "人看着"},
+    {"name": "客服", "ai_duty": "", "human_duty": "人处理"}
+  ],
+  "alignment": {
+    "upstream_is_downstream_input": false,
+    "feedback_paths": [],
+    "breakpoints": ["选品报告没转成清单，内容按感觉生产", "投放数据没回流选品"]
+  },
+  "goal": {
+    "metric": "",
+    "baseline": 0,
+    "target": 100,
+    "headline_kpi_from_benchmark": true
+  },
+  "rhythm": {
+    "has_backward_plan": false,
+    "node_check_items": [
+      {"node": "旺季前", "check_item": ""}
+    ]
+  },
+  "landing": {
+    "sop_within_72h": false,
+    "sop_written_into_doc": false,
+    "trial_period_days": 0,
+    "sops_written": 0
+  },
+  "data_provenance": [
+    {"claim": "爆款预测准确率82%", "source": "self_report", "used_for": "kpi"},
+    {"claim": "运营效率提升60%", "source": "self_report", "used_for": "kpi"},
+    {"claim": "营收24.51亿", "source": "financial_report", "used_for": "kpi"}
+  ]
+}

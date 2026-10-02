@@ -1,0 +1,44 @@
+{
+  "level": {
+    "current": "process",
+    "target": "chain",
+    "gap_reason": "四节点各自有 SOP，但节点间人肉传递、投放数据没回流选品"
+  },
+  "nodes": [
+    {"name": "选品", "ai_duty": "跑市场容量/竞品集中度/价格带分布", "human_duty": "拍板做/不做，输出决策清单（带依据）"},
+    {"name": "内容", "ai_duty": "listing/主图文案/A+页面初稿", "human_duty": "品牌语气校准 + 合规审查（平台禁词/品类声称限制）"},
+    {"name": "投放", "ai_duty": "广告结构分组/关键词分层/否定词清理", "human_duty": "预算分配 + 止损线设定（ACOS 红线/连续 N 天下线规则）"},
+    {"name": "客服", "ai_duty": "常见问答模板化 + 差评情感预警", "human_duty": "升级投诉处理 + 评价危机处置"}
+  ],
+  "alignment": {
+    "upstream_is_downstream_input": true,
+    "feedback_paths": ["投放数据回流选品（低转化词/卖点→下轮选品）", "客服高频问题回流内容（用户真实需求信号）"],
+    "breakpoints": []
+  },
+  "goal": {
+    "metric": "单店月运营工时",
+    "baseline": 240,
+    "target": 168,
+    "headline_kpi_from_benchmark": false
+  },
+  "rhythm": {
+    "has_backward_plan": true,
+    "node_check_items": [
+      {"node": "T-60定备货", "check_item": "库存深度vs预测流量，缺口>20%启动补货或砍预测"},
+      {"node": "T-30跑预热", "check_item": "预热期ACOS基线表已记录"},
+      {"node": "T-7锁仓", "check_item": "到仓时间vs大促开始时间缓冲≥3天，否则切换备选物流"}
+    ]
+  },
+  "landing": {
+    "sop_within_72h": true,
+    "sop_written_into_doc": true,
+    "trial_period_days": 14,
+    "sops_written": 1
+  },
+  "data_provenance": [
+    {"claim": "吉宏2026H1跨境社交电商营收24.51亿/净利+80.92%", "source": "financial_report", "used_for": "direction"},
+    {"claim": "爆款预测准确率82%", "source": "self_report", "used_for": "direction"},
+    {"claim": "运营效率提升60%", "source": "self_report", "used_for": "hypothesis"},
+    {"claim": "大会能帮卖家解决四大痛点", "source": "expectation", "used_for": "direction"}
+  ]
+}
